@@ -21,31 +21,7 @@
 
 # ---------------------------------------------------------------------
 
-. `dirname ${BASH_SOURCE[0]}`/embedded-utils.sh
-
-# --------------------------------------------------------------
-# Denote all the embedded machines we have that should not have
-# Entware installed on.
-# --------------------------------------------------------------
-
-declare -A ENTWARE_EXCLUDES
-
-ENTWARE_EXCLUDES["admin-ap"]="admin-ap"
-ENTWARE_EXCLUDES["cloud-ap"]="cloud-ap"
-ENTWARE_EXCLUDES["cloud-server"]="cloud-server"
-
-# --------------------------------------------------------------
-# If we are found in the excludes array, we are done (aka exit)
-# --------------------------------------------------------------
-
-if ["${ENTWARE_EXCLUDES[`hostname`]}" != ""]
-then
-	echo
-	echo "WARNING:  Host excluded per ENTWARE_EXCLUDES"
-	echo
-
-	exit 0
-fi
+. `dirname ${BASH_SOURCE[0]}`/host-utils.sh
 
 # ---------------------------------------------------------------------
 # Setup variables for install

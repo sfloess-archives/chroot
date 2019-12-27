@@ -21,7 +21,29 @@
 
 # ---------------------------------------------------------------------
 
-. `dirname ${BASH_SOURCE[0]}`/host-utils.sh
+. `dirname ${BASH_SOURCE[0]}`/embedded-utils.sh
+
+# --------------------------------------------------------------
+# Denote all the embedded machines we have that should not have
+# Entware installed on.
+# --------------------------------------------------------------
+
+declare -a DEBIAN_EXCLUDES
+
+DEBIAN_EXCLUDES["den-ap"]="den-ap"
+
+# --------------------------------------------------------------
+# If we are found in the excludes array, we are done (aka exit)
+# --------------------------------------------------------------
+
+if ["${DEBIAN_EXCLUDES[`hostname`]}" != ""]
+then
+	echo
+	echo "WARNING:  Host excluded per DEBIAN_EXCLUDES"
+	echo
+
+	exit 0
+fi
 
 # ---------------------------------------------------------------------
 # Setup variables for install
