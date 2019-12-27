@@ -97,7 +97,7 @@ installDebian() {
                                                                         
     # ---------------------------------------------------------------------
 
-    # When chroot'ing in, we don't want the DD-WRT value, so unsetting...
+    # When chroot'ing in, we don't want the host OS values, so unsetting...
     unset LD_LIBRARY_PATH
 
     chroot ${DEBIAN_DIR} apt-get update -y
