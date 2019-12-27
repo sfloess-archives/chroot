@@ -36,6 +36,7 @@ HOSTS["admin-ap"]="admin-ap"
 HOSTS["cloud-ap"]="cloud-ap"
 HOSTS["desktop-ap"]="desktop-ap"
 HOSTS["bedroom-ap"]="bedroom-ap"
+HOSTS["den-ap"]="den-ap"
 HOSTS["cloud-server"]="cloud-server"
 HOSTS["pi-01"]="pi-01"
 HOSTS["pi-02"]="pi-02"
@@ -44,17 +45,14 @@ HOSTS["pi-02"]="pi-02"
 # Host dir where things are run and installed to/from.
 # --------------------------------------------------------------
 
-ALT_F_DIR="/mnt/mda0"
-DD_WRT_DIR="/tmp/mnt/sda0"
-OPEN_WRT_DIR="/tmp/mnt/sda1"
-
 declare -A HOST_DIR
 
-HOST_DIR["admin-ap"]="${OPEN_WRT_DIR}"
-HOST_DIR["cloud-ap"]="${OPEN_WRT_DIR}"
-HOST_DIR["desktop-ap"]="${DD_WRT_DIR}"
-HOST_DIR["bedroom-ap"]="${DD_WRT_DIR}"
-HOST_DIR["cloud-server"]="${ALT_F_DIR}"
+HOST_DIR["admin-ap"]="/tmp/mnt/sda0"
+HOST_DIR["cloud-ap"]="/tmp/mnt/sda1"
+HOST_DIR["desktop-ap"]="/tmp/mnt/sda1"
+HOST_DIR["bedroom-ap"]="/tmp/mnt/sda1"
+HOST_DIR["den-ap"]="/tmp/mnt/sda1"
+HOST_DIR["cloud-server"]="/mnt/md0"
 
 # --------------------------------------------------------------
 # Host dir where things are run and installed to/from.
@@ -62,15 +60,17 @@ HOST_DIR["cloud-server"]="${ALT_F_DIR}"
 
 ARMEL_HOST="armel"
 ARMHF_HOST="armhf"
+MIPS_HOST="mips"
 AMRV5_TEL_HOST="armv5tel"
 
-declare -A HOST_HARDWARE
+declare -A HOST_ARCH
 
-HOST_HARDWARE["admin-ap"]="${ARMHF_HOST}"
-HOST_HARDWARE["cloud-ap"]="${ARMHF_HOST}"
-HOST_HARDWARE["desktop-ap"]="${ARMEL_HOST}"
-HOST_HARDWARE["bedroom-ap"]="${ARMEL_HOST}"
-HOST_HARDWARE["cloud-server"]="${AMRV5_TEL_HOST}"
+HOST_ARCH["admin-ap"]="${ARMHF_HOST}"
+HOST_ARCH["cloud-ap"]="${ARMHF_HOST}"
+HOST_ARCH["desktop-ap"]="${ARMEL_HOST}"
+HOST_ARCH["bedroom-ap"]="${ARMEL_HOST}"
+HOST_ARCH["den-ap"]="${MIPS_HOST}"
+HOST_ARCH["cloud-server"]="${AMRV5_TEL_HOST}"
 
 # --------------------------------------------------------------
 

@@ -44,7 +44,7 @@ installDebian() {
 
     rm -rf ${DEBIAN_DIR}
 
-    tar xvf /mnt/smbshare/nas/backups/OperatingSystem/debian-10_$HOST_HARDWARE[`hostname`].tar
+    tar xvf /mnt/smbshare/nas/backups/OperatingSystem/debian-10_$HOST_ARCH[`hostname`].tar
 
     # ---------------------------------------------------------------------
 
