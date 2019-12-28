@@ -1,1 +1,0 @@
-../../install-entware.sh
