@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ---------------------------------------------------------------------
+
 #
 # This file is part of the Scot P. Floess family of personal 
 # open source software.
@@ -115,4 +117,3 @@ installDebian() {
 installDebian
 
 # --------------------------------------------------------------
-

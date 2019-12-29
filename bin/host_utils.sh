@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# ---------------------------------------------------------------------
+
 #
 # This file is part of the Scot P. Floess family of personal 
 # open source software.
@@ -73,4 +75,36 @@ HOST_ARCH["den-ap"]="${MIPS_HOST}"
 HOST_ARCH["cloud-server"]="${AMRV5_TEL_HOST}"
 
 # --------------------------------------------------------------
+# Location of Entware installations.
+# --------------------------------------------------------------
 
+declare -A HOST_ENTWARE_DIR
+
+HOST_ENTWARE_DIR["desktop-ap"]="${HOST_DIR[desktop-ap]}/entware"
+HOST_ENTWARE_DIR["bedroom-ap"]="${HOST_DIR[bedroom-ap]}/entware"
+
+# --------------------------------------------------------------
+# Location of Debian installations.
+# --------------------------------------------------------------
+
+declare -A HOST_DEBIAN_DIR
+
+HOST_DEBIAN_DIR["admin-ap"]="${HOST_DIR[admin-ap]}/debian_${HOST_ARCH[admin-ap]}"
+HOST_DEBIAN_DIR["cloud-ap"]="${HOST_DIR[cloud-ap]}/debian_${HOST_ARCH[cloud-ap]}"
+HOST_DEBIAN_DIR["desktop-ap"]="${HOST_DIR[desktop-ap]}/debian_${HOST_ARCH[desktop-ap]}"
+HOST_DEBIAN_DIR["bedroom-ap"]="${HOST_DIR[bedroom-ap]}/debian_${HOST_ARCH[bedroom-ap]}"
+HOST_DEBIAN_DIR["cloud-server"]="${HOST_DIR[cloud-server]}"
+
+# --------------------------------------------------------------
+# Debian services.
+# --------------------------------------------------------------
+
+declare -A HOST_DEBIAN_SERVICES
+
+HOST_DEBIAN_SERVICES["admin-ap"]="dnsmasq ntp rsyslog cron rpcbind nfs-common nfs-kernel-server postfix dovecot nis ssh nmbd smbd rsync plexmediaserver"
+HOST_DEBIAN_SERVICES["cloud-ap"]="ryslog ntp cron rpcbind nfs-common nfs-kernel-server postfix nis ssh rsync mysql postfix"
+HOST_DEBIAN_SERVICES["desktop-ap"]="rsyslog ntp cron rpcbind postfix nis ssh"
+HOST_DEBIAN_SERVICES["bedroom-ap"]="ryslog ntp cron rpcbind postfix ssh"
+HOST_DEBIAN_SERVICES["cloud-server"]="rsyslog cron rpcbind tftpd-hpa nfs-common ssh cobblerd apache2"
+
+# --------------------------------------------------------------
