@@ -21,7 +21,7 @@
 
 # ---------------------------------------------------------------------
 
-. `dirname ${BASH_SOURCE[0]}`/host-utils.sh
+. `dirname ${BASH_SOURCE[0]}`/../host-utils.sh
 
 # ---------------------------------------------------------------------
 # Setup variables for install
@@ -38,7 +38,7 @@ declare -A ENTWARE_SUB_URL
 ENTWARE_SUB_URL["mips"]="mipssf-k3.4"
 ENTWARE_SUB_URL["armv7l"]="armv7sf-k3.2"
 
-ENTWARE_INSTALL_SCRIPT="http://bin.entware.net${ENTWARE_SUB_URL[${MACHINE_TYPE}]}/generic.sh"
+ENTWARE_INSTALL_SCRIPT="http://bin.entware.net/${ENTWARE_SUB_URL[${MACHINE_TYPE}]}/generic.sh"
 
 # --------------------------------------------------------------
 # Install Entware as decribed here:
@@ -66,8 +66,9 @@ installEntware() {
 }
 
 # --------------------------------------------------------------
+# Core work here...
+# --------------------------------------------------------------
 
 installEntware
 
 # --------------------------------------------------------------
-

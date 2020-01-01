@@ -14,9 +14,9 @@ mountEntwareDirs() {
 
     for nfsDir in ${NFS_DIRS}
     do
-	MOUNT_DIR=${DEBIAN_DIR}/mnt/admin-ap/`basename ${nfsDir}`
+        MOUNT_DIR=${DEBIAN_DIR}/mnt/admin-ap/`basename ${nfsDir}`
 
-	mkdir -p ${MOUNT_DIR}
+        mkdir -p ${MOUNT_DIR}
 
         /opt/bin/nfusr nfs://admin-ap/${nfsDir} ${MOUNT_DIR}
     done
@@ -27,7 +27,7 @@ startEntwareApps() {
     then
         `dirname $0`/`hostname`/start-entware.sh >> /tmp/flossware.log 2>&1
     else
-	echo "No entware script for host:  `dirname $0`/`hostname`/start-entware.sh" >> /tmp/flossware.log 2>&1
+        echo "No entware script for host:  `dirname $0`/`hostname`/start-entware.sh" >> /tmp/flossware.log 2>&1
     fi
 }
 
