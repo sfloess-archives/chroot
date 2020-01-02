@@ -1,3 +1,3 @@
 # chroot
 
-Functionality for all my chroot'd environments
+Functionality for all my chroot'd environments.
