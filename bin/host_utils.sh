@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # ---------------------------------------------------------------------
-
-#
 # This file is part of the Scot P. Floess family of personal 
 # open source software.
 #
@@ -19,11 +17,27 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
-#
+# ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
-# Setup variables for install.
+# Setup variables...
 # ---------------------------------------------------------------------
+
+export OS_NAME=`lsb_release -i | cut -f 2 -d ':' | tr -d '\t'`
+export OS_RELEASE_NAME=`lsb_release -c | cut -f 2 -d ':' | tr -d '\t'`
+export OS_VERSION=`lsb_release -r | cut -f 2 -d ':' | tr -d '\t'`
+
+export BIN_DIR=/root/Bin
+export HOST_DIR=${BIN_DIR}/Host
+export DOMAIN_DIR=${BIN_DIR}/Domain
+export OS_DIR=${BIN_DIR}/OperatingSystem
+
+export HOSTNAME_DIR=${HOST_DIR}/`hostname`
+export DOMAINNAME_DIR=${DOMAIN_DIR}/`domainname`
+export OS_NAME_DIR=${OS_DIR}/${OS_NAME}
+export OS_RELEASE_NAME_DIR=${OS_NAME_DIR}/${OS_RELEASE_NAME}
+export OS_RELEASE_DIR=${OS_RELEASE_NAME_DIR}/${OS_VERSION}
+
 
 MACHINE_TYPE=`uname -m`
 
