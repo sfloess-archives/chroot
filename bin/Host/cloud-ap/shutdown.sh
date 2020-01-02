@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cat /var/run/elasticsearch.pid | xargs kill -SIGTERM
+
+/etc/init.d/postgresql        stop
+/etc/init.d/mysql             stop
+
+/etc/init.d/rsync             stop
+/etc/init.d/ssh               stop
+/etc/init.d/nis               stop
+/etc/init.d/nfs-kernel-server stop
+/etc/init.d/nfs-common        stop
+/etc/init.d/rpcbind           stop
+/etc/init.d/cron              stop
+/etc/init.d/rsyslog           stop
+
+umount -a
+
